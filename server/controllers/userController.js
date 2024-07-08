@@ -1,5 +1,6 @@
 import User from "../models/userModel.js";
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken'
 
 export const createUser = async(req, res) => {
   const { nombreApellido, usuario, correo, password } = req.body;
@@ -58,7 +59,9 @@ export const login = (req, res) => {
         res.status(401).send('Contraseña Incorrecta');
         return;
       }
-      res.status(200).send('Login exitoso');
+      // Generar un token JWT
+      //const token = jwt.sign({ id: user.id, nombre: user.nombre, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+      res.status(200).json(results[0]);
     });
   });
 };

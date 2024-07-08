@@ -1,8 +1,10 @@
 import express from 'express'
 import cors from 'cors'
 import userRoutes from './routes/userRoutes.js'
+import favoritoRoutes from './routes/favoritoRoutes.js'
 import connection from './db.js'
 import mysql from 'mysql2'
+
 
 const app = express()
 
@@ -13,11 +15,15 @@ const db = mysql.createConnection({
     database: 'ejercicio'
 })
 
-app.use(cors())
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  }))
 app.use(express.json())
 
 //Rutas
 app.use('/', userRoutes)
+app.use('/', favoritoRoutes)
 
 /*
 app.post('/create', (req, res)=>{
