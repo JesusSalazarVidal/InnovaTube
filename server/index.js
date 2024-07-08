@@ -1,4 +1,5 @@
 import app from './app.js'
+import connection from './db.js'
 
 const PORT = 3000;
 
