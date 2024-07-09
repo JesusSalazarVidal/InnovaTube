@@ -12,15 +12,8 @@ dotenv.config();
 
 const app = express()
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'ejercicio'
-})
-
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONT_URL,
     credentials: true,
   }))
 app.use(express.json())
@@ -29,20 +22,7 @@ app.use(express.json())
 app.use('/', userRoutes)
 app.use('/', favoritoRoutes)
 
-/*
-app.post('/create', (req, res)=>{
-    const {nombreApellido, usuario, correo, password} = req.body
-    db.query('INSERT INTO usuarios(nombreApellido, usuario, correo, password) VALUES(?,?,?,?)',[nombreApellido, usuario, correo, password],
-        (err, result)=>{
-            if(err){
-                console.log(err)
-            }else{
-                res.send("usuario regitrado")
-            }
-        }
-    )
-})
-    */
+
 
 
 export default app
