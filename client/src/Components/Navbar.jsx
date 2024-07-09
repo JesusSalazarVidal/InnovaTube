@@ -35,12 +35,12 @@ function Navbar() {
           </>
         ) : (
           <>
-            <a
+            <Link
+              to="/Registrar"
               className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700"
-              href="#"
             >
-              About
-            </a>
+              Registrar
+            </Link>
             <a
               className="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700"
               href="#"
