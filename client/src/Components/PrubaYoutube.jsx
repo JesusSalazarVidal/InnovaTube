@@ -68,7 +68,10 @@ const YouTubeSearch = () => {
   }, [user]);
 
   return (
-    <div>
+    <div className='bg-slate-400'>
+      <h1 className="text-3xl font-bold underline bg-red-400">
+      Hello world!
+    </h1>
       <button onClick={user ? handleSignOut : handleSignIn}>
         {user ? 'Sign Out' : 'Sign In'}
       </button>
@@ -79,7 +82,7 @@ const YouTubeSearch = () => {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search for videos"
         />
-        <button type="submit">Search</button>
+        <button className='text-xl' type="submit">Buscar</button>
       </form>
       <div>
         {videos.map((video) => (

@@ -1,7 +1,10 @@
 import app from './app.js'
 import connection from './db.js'
+import dotenv from 'dotenv'
 
-const PORT = 3000;
+dotenv.config();
+
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);

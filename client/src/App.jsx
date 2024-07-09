@@ -1,9 +1,30 @@
 import React from 'react'
-import YouTubeSearch from '../Components/PrubaYoutube'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import YouTubeSearch from './Components/PrubaYoutube'
+import Login from './Components/Login'
+import LoginPage from './pages/LoginPage'
+import {InnovaProvider} from './Context/InnovaContext'
+import Inicio from './pages/InicioPage'
+import Navbar from './Components/Navbar'
+import FormularioRegistro from './Components/FormularioRegistro'
+import FavoritosUsuarioPage from './pages/FavoritosUsuarioPage'
 
 function App() {
   return (
-    <YouTubeSearch></YouTubeSearch>
+    <InnovaProvider>
+    <BrowserRouter>
+    <main>
+    <Navbar/>
+      <Routes>
+        
+        <Route path='/login' element={<LoginPage/>}/>
+        <Route path='/inicio' element={<Inicio/>}/>
+        <Route path='/registrar' element={<FormularioRegistro/>}/>
+        <Route path='/misFavoritos' element={<FavoritosUsuarioPage/>}/>
+      </Routes>
+    </main>
+    </BrowserRouter>
+    </InnovaProvider>
   )
 }
 

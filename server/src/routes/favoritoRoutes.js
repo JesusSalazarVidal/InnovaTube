@@ -4,6 +4,6 @@ import {createFavorito, getFavoritosByUser} from '../controllers/favoritoControl
 const router = express.Router()
 
 router.post('/favorito', createFavorito)
-router.get('/favoritos/:id', getFavoritosByUser)
+router.get('/favoritos/:idUsuario', getFavoritosByUser)
 
 export default router
