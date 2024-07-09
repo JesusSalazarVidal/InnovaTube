@@ -1,7 +1,5 @@
 import React from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import YouTubeSearch from './Components/PrubaYoutube'
-import Login from './Components/Login'
 import LoginPage from './pages/LoginPage'
 import {InnovaProvider} from './Context/InnovaContext'
 import Inicio from './pages/InicioPage'
