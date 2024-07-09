@@ -7,7 +7,7 @@ function YouTubeInicio({Usuario}) {
   const [videos, setVideos] = useState([]);
   const {createFavorito} = useInnova()
 
-  const API_KEY = process.env.REACT_APP_API_KEY_YOUTUBE;
+  const API_KEY = 'AIzaSyChdE5gdQl_5WROBYrGG1ym6e4RMS7-90I';
 
   const handleSearch = async (e) => {
     e.preventDefault();

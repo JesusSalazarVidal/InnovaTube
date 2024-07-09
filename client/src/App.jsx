@@ -16,6 +16,7 @@ function App() {
       <Routes>
         
         <Route path='/login' element={<LoginPage/>}/>
+        <Route path='/inicio' element={<Inicio/>}/>
         <Route path='/' element={<Inicio/>}/>
         <Route path='/registrar' element={<FormularioRegistro/>}/>
         <Route path='/misFavoritos' element={<FavoritosUsuarioPage/>}/>
